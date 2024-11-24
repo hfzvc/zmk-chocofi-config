@@ -46,10 +46,10 @@
         sym_layer {
             display-name = "Symbol Layer";
             bindings = <
-    &none &none &none &none &none       &none &none &none &none &none
+    &none &none &none &none &none               &none &none &none &none &none
     &none &kp COMMA &kp BSLH &kp DOT &kp DASH   &none &none &none &none &none
-    &none &none &none &none &none       &none &none &none &none &none &none &none
-                &none &none &none       &none &to COLEMAK &none
+    &none &none &none &none &none               &none &none &none &none &none
+                &none &none &none               &none &to COLEMAK &none
             >;
         };
     };
