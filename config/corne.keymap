@@ -47,7 +47,7 @@
             display-name = "Symbol Layer";
             bindings = <
     &none &none &none &none &none               &none &none &none &none &none
-    &none &kp COMMA &kp BSLH &kp DOT &kp MINUS   &none &none &none &none &none
+    &none &kp COMMA &kp BSLH &kp DOT &kp MINUS  &none &none &none &none &none
     &none &none &none &none &none               &none &none &none &none &none
                 &none &none &none               &none &to COLEMAK &none
             >;
