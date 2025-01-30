@@ -18,6 +18,7 @@
         };
     keymap {
         compatible = "zmk,keymap";
+        // this is a COLEMAKE MOD-DH layout
         colemak_layer {
             display-name = "CLMK LYR";
 // -----------------------------------------------------------------------------------------
@@ -29,7 +30,7 @@
     &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI
     &mt LSHIFT A &ht_hp LSHIFT R &ht_bl LSHIFT S &ht_tp LSHIFT T &kp G   &kp M &kp N  &kp E     &kp I   &kp O
     &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
-        &kp LGUI &bt BT_CLR_ALL &lt NUM SPACE   &kp RET &mo NUM &kp RALT
+        &kp LGUI &bt BT_CLR_ALL &lt NUM SPACE   &kp RET &mt DOT NUM &kp RALT
             >;
         };
 
