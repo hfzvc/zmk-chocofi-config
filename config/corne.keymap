@@ -50,23 +50,53 @@
               &kp Q   &kp W   &kp F   &kp P   &kp B        &kp J   &kp L   &kp U   &kp Y   &kp SEMI
             &hm LSHFT A &hm LCTRL R &hm LALT S  &hm LCMD T  &kp G    &hm RCMD M  &hm RALT N  &hm RCTRL E  &hm RSHFT I  &kp O
             &kp Z  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH
-                                &mt A SYM  &mt B NAV  &lt NUM SPACE       &kp RET  &mt DOT NUM  &mt C BLT
+                                &lt SYM A  &lt NAV B  &lt NUM SPACE       &kp RET  &mo NUM  &lt C BLT
             >;
         };
         SYMBOL {
             display-name = "SYM LYR";
+            bindings = <
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                            &none &none &none  &none &none &none
+            >;
         };
         NAVIGATION {
             display-name = "NAV LYR";
+            bindings = <
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                            &none &none &none  &none &none &none
+            >;
         };
         NUMBER {
             display-name = "NUM LYR";
+            bindings = <
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                            &none &none &none  &none &none &none
+            >;
         };
         FUNCTION {
             display-name = "FUN LYR";
+            bindings = <
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                            &none &none &none  &none &none &none
+            >;
         };
         BLUETOOTH {
             display-name = "BLT LYR";
+            bindings = <
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                &none &none &none &none &none  &none &none &none &none &none
+                            &none &none &none  &none &none &none
+            >;
         };
     };
 };
