@@ -50,7 +50,7 @@
               &kp Q   &kp W   &kp F   &kp P   &kp B        &kp J   &kp L   &kp U   &kp Y   &kp SEMI
             &hm LSHFT A &hm LCTRL R &hm LALT S  &hm LCMD T  &kp G    &hm RCMD M  &hm RALT N  &hm RCTRL E  &hm RSHFT I  &kp O
             &kp Z  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH
-                                &lt SYM A  &lt NAV B  &lt NUM SPACE       &kp RET  &mo NUM  &lt C BLT
+                                &lt SYM A  &bt BT_CLR_ALL  &lt NUM SPACE       &kp RET  &mo NUM  &lt C BLT
             >;
         };
         SYMBOL {
