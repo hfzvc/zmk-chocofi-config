@@ -55,18 +55,23 @@
         };
         SYMBOL {
             display-name = "SYM LYR";
+            bindings = <>;
         };
         NAVIGATION {
             display-name = "NAV LYR";
+            bindings = <>;
         };
         NUMBER {
             display-name = "NUM LYR";
+            bindings = <>;
         };
         FUNCTION {
             display-name = "FUN LYR";
+            bindings = <>;
         };
         BLUETOOTH {
             display-name = "BLT LYR";
+            bindings = <>;
         };
     };
 };
