@@ -8,61 +8,65 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define COLEMAK 0
-#define NUM 1
-#define SYM 2
+#define CLMK 0
+#define SYM 1
+#define NAV 2
+#define NUM 3
+#define FUN 4
+#define BLT 5
 
 / {
     chosen {
         zmk,physical-layout = <&foostan_corne_5col_layout>;
     };
     behaviors {
-        rpi: require_prior_idle {
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
     };
     keymap {
         compatible = "zmk,keymap";
+        // Layer: MAIN
+        // ┏━━━━━━━━━━━━━ Left-side ━━━━━━━━━━━━━━━┓    ┏━━━━━━━━━━━━━ Right-side ━━━━━━━━━━━━━━┓
+        // ┣━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━┪    ┢━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━╈━━━━━━━┫
+        // ┃   Q   ┃   W   ┃   F   ┃   P   ┃   B   ┃    ┃   J   ┃   L   ┃   U   ┃   Y   ┃   ;   ┃
+        // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+        // ┃ ⇧ ┊ A ┃ ⌃ ┊ R ┃ ⌥ ┊ S ┃ ⌘ ┊ T ┃   G   ┃    ┃   M   ┃ N ┊ ⌘ ┃ E ┊ ⌥ ┃ I ┊ ⌃ ┃ O ┊ ⇧ ┃
+        // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫    ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+        // ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃    ┃   K   ┃   H   ┃   ,   ┃   .   ┃   /   ┃
+        // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+        //                 ┌───────┬───────┬───────┐    ┌───────┬───────┬───────┐
+        //                 │   ⌘   │ 󰭜 ┊ 󰎥 │ ␣ ┊↑# │    │   ⏎   │ 󱁐 ┊ 󰎨 │   󰎺   │
+        //                 ╰───────┴───────┴───────┘    └───────┴───────┴───────╯
         // this is a COLEMAKE MOD-DH layout
-        colemak_layer {
+        COLEMAK {
             display-name = "CLMK LYR";
-// -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  |
-// |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |
-// |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |
-//       | GUI | BLTCLRALL | SPC |   | ENT | RSE  | ALT |
             bindings = <
-    &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI
-    &mt LSHIFT A &rpi LSHIFT R &rpi LSHIFT S &rpi LSHIFT T &kp G   &kp M &kp N  &kp E     &kp I   &kp O
-    &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
-        &kp LGUI &bt BT_CLR_ALL &lt NUM SPACE   &kp RET &mt DOT NUM &kp RALT
+              &kp Q   &kp W   &kp F   &kp P   &kp B        &kp J   &kp L   &kp U   &kp Y   &kp SEMI
+            &hm LSHFT A &hm LCTRL R &hm LALT S  &hm LCMD T  &kp G    &hm RCMD M  &hm RALT N  &hm RCTRL E  &hm RSHFT I  &kp O
+            &kp Z  &kp X  &kp C  &kp D  &kp V    &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH
+                                &mt A SYM  &mt B NAV  &lt NUM SPACE       &kp RET  &mt DOT NUM  &mt C BLT
             >;
         };
-
-        num_layer {
-            display-name = "NUM LYR";
-            bindings = <
-    &none &none &none &none &none       &none &none &none &none &none
-    &none &kp N9 &kp N1 &kp N8 &kp N9   &none &none &none &none &none
-    &none &none &none &none &none       &none &none &none &none &none
-                &none &none &none       &none &to SYM &none
-            >;
-        };
-
-        sym_layer {
+        SYMBOL {
             display-name = "SYM LYR";
-            bindings = <
-    &none &none &none &none &none               &none &none &none &none &none
-    &none &kp COMMA &kp BSLH &kp DOT &kp MINUS  &none &none &none &none &none
-    &none &none &none &none &none               &none &none &none &none &none
-                &none &none &none               &none &to COLEMAK &none
-            >;
+        };
+        NAVIGATION {
+            display-name = "NAV LYR";
+        };
+        NUMBER {
+            display-name = "NUM LYR";
+        };
+        FUNCTION {
+            display-name = "FUN LYR";
+        };
+        BLUETOOTH {
+            display-name = "BLT LYR";
         };
     };
 };
