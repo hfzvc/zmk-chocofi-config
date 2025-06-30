@@ -1,6 +1,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define CLMK 0
+#define SYM 1
+#define NUM 2
+
+
 / {
   chosen {
     zmk,physical-layout = <&foostan_corne_5col_layout>;
@@ -15,7 +20,27 @@
         &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp SEMI
         &kp A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
         &kp X &kp C &kp D &kp V &kp Z &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &none &kp SPACE &kp TAB &kp BSPC &kp ENTER &none
+                &mo SYM &kp TAB &kp SPACE &kp ENTER &kp BSPC &mo NUM
+      >;
+    };
+
+    symbol_layer {
+      display-name = "SYM LYR";
+      bindings = <
+        &none &none &none &none &none &none &none &none &none &none
+        &none &none &none &none &none &none &none &none &none &none
+        &none &none &none &none &none &none &none &none &none &none
+                    &none &none &none &none &none &none
+      >;
+    };
+
+    number_layer {
+      display-name = "NUM LYR";
+      bindings = <
+        &none &kp F4 &kp F5 &kp F6 &kp F12 &none &kp N6 &kp N5 &kp N4 &none
+        &none &kp F1 &kp F2 &kp F3 &kp F11 &none &kp N3 &kp N2 &kp N1 &none
+        &none &kp F7 &kp F8 &kp F9 &kp F10 &none &kp N9 &kp N8 &kp N7 &none
+                &none &none &kp GLOBE &none &none &kp N0
       >;
     };
   };
